@@ -1,2 +1,2 @@
-# Parent-info-parser
-Python script for parsing student guardian text notification opt-in status
+# Python Projects
+Any Small python projects that I have done
