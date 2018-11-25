@@ -1,2 +1,2 @@
 # Parent-info-parser
-Python script for parsing parent data from a school database
+Python script for parsing student guardian text notification opt-in status
