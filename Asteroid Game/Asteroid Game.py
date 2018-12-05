@@ -28,7 +28,10 @@ class Game:
         while self.continue_game:
             # start with a 2% chance to spawn an asteroid each tick, spawn chance
             # increases as score increases
-            ast_spawn = random.randint(0,1000-int(self.score))
+            if 1000-self.score > 100:
+                ast_spawn = random.randint(0,1000-int(self.score))
+            else:
+                ast_spawn = random.randint(0,100)
             if ast_spawn <= 20 :
                 aster = Asteroid(self.screen)
                 self.ast_list.append(aster)
