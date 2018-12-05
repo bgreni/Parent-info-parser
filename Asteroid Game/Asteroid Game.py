@@ -8,7 +8,7 @@ def main():
     pygame.init()
     game = Game()
     game.run()
-    pygame.quit()
+    game.end_of_game()
     
 class Game:
     # Game object represents an instance of this game
@@ -42,6 +42,18 @@ class Game:
             pygame.display.flip()
             pygame.time.wait(5)                
             
+        
+    def end_of_game(self):
+        windowOpen = True
+        self.screen.fill((0,0,0))
+        text = self.font.render("SCORE: "+str(self.score),False,pygame.Color('WHITE'))
+        self.screen.blit(text,((self.screen.get_width()/2)-(text.get_width()/2),self.screen.get_height()/2))     
+        pygame.display.flip()
+        while windowOpen:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    windowOpen = False
+        pygame.quit()
         
     def handle_key(self,ship):
         # check for control input
